@@ -1,8 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=https://www.swisscollectibles.com"/>
-    <title>Redirecting...</title>
+    <meta charset="UTF-8" />
+    <script>
+      // Redirect both collected.ch and www.collected.ch
+      const redirectTo = "https://www.swisscollectibles.com";
+
+      if (
+        location.hostname === "collected.ch" ||
+        location.hostname === "www.collected.ch"
+      ) {
+        window.location.replace(redirectTo);
+      }
+    </script>
+    <title>Redirecting…</title>
   </head>
   <body>
     <p>Redirecting to <a href="https://www.swisscollectibles.com">Swiss Collectibles</a>.</p>
