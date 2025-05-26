@@ -3,14 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <script>
-      // Redirect both collected.ch and www.collected.ch
-      const redirectTo = "https://www.swisscollectibles.com";
+      const redirectBase = "https://www.swisscollectibles.com";
+
+      // Check hostname and path
+      const host = window.location.hostname;
+      const path = window.location.pathname;
 
       if (
-        location.hostname === "collected.ch" ||
-        location.hostname === "www.collected.ch"
+        host === "collected.ch" ||
+        host === "www.collected.ch"
       ) {
-        window.location.replace(redirectTo);
+        // If path is /welcome, redirect to specific URL
+        if (path === "/welcome") {
+          window.location.replace(`${redirectBase}`);
+        } else {
+          // Default redirect
+          window.location.replace(redirectBase);
+        }
       }
     </script>
     <title>Redirecting…</title>
